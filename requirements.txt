@@ -1,0 +1,9 @@
+flask==1.1
+https://projects.unbit.it/downloads/uwsgi-lts.tar.gz
+Flask-SQLAlchemy==2.5.1
+PyMySql==1.0.2
+cryptography==3.4.8
+Flask-Migrate==3.1.0
+Python-Dotenv==0.19.0
+Flask-Testing==0.8.1
+Flask-Restful==0.3.9
