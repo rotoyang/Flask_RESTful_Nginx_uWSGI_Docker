@@ -22,6 +22,7 @@ jobs:
 
       - name: Checkout Code Repository
         uses: actions/checkout@v2.3.4
+        with: max_line_length=120
 
       - name: Set up Python 3.7
         uses: actions/setup-python@v2.2.2
@@ -47,13 +48,13 @@ jobs:
         run:  docker-compose -f dev.yml build
 
       - name: Make DB Migrations
-        run:  docker-compose -f dev.yml run --rm flask flask db upgrade
+        run:  docker-compose -f test.yml run --rm flask flask db upgrade
 
       - name: Run the Stack
-        run:  docker-compose -f dev.yml up -d
+        run:  docker-compose -f test.yml up -d
 
       - name: Run Django Tests
-        run:  docker-compose -f dev.yml exec -T flask test
+        run:  docker-compose -f test.yml exec -T flask test
 
       - name: Tear down the Stack
         run:  docker-compose down
