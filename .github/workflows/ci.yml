@@ -22,7 +22,8 @@ jobs:
 
       - name: Checkout Code Repository
         uses: actions/checkout@v2.3.4
-        with: max_line_length=120
+        with: 
+          max_line_length: 120
 
       - name: Set up Python 3.7
         uses: actions/setup-python@v2.2.2
