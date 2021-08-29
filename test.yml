@@ -16,9 +16,11 @@ services:
       - mysql
     environment:
       MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
       MYSQL_DATABASE: test
       MYSQL_USER: test
       MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
     command: /start
 
   mysql:
@@ -32,9 +34,11 @@ services:
       - ./compose/dev/mysql/mysql-init-files:/docker-entrypoint-initdb.d
     environment:
       MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
       MYSQL_DATABASE: test
       MYSQL_USER: test
       MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
     restart: always
     ports:
       - "0.0.0.0:3306:3306"
