@@ -49,12 +49,12 @@ jobs:
         run:  docker-compose -f test.yml build
 
       - name: Make DB Migrations
-        run:  docker-compose -f test.yml run --rm flask flask db upgrade
+        run:  docker-compose -f test.yml run --rm flask cd task && flask db upgrade
 
       - name: Run the Stack
         run:  docker-compose -f test.yml up -d
 
-      - name: Run Django Tests
+      - name: Run Flask Tests
         run:  docker-compose -f test.yml exec -T flask test
 
       - name: Tear down the Stack
