@@ -55,7 +55,7 @@ jobs:
         run:  docker-compose -f test.yml up -d
 
       - name: Run Flask Tests
-        run:  docker-compose -f test.yml exec -T flask test
+        run:  docker-compose -f test.yml run --rm flask flask test
 
       - name: Tear down the Stack
         run:  docker-compose down
