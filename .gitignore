@@ -278,3 +278,4 @@ botone_backend/media/
 .envs/*
 .envs/.local/
 notes.json
+task/config/test.db
