@@ -21,6 +21,7 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: test
+      FLASK_APP: ./task/app.py
     command: /start
 
   mysql:
