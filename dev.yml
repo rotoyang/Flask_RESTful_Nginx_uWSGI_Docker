@@ -15,7 +15,6 @@ services:
     depends_on:
       - mysql
     env_file:
-      # - ./.envs/.dev/.mysql
       - ./.mysql
     command: /start
 
@@ -29,11 +28,10 @@ services:
       - dev_mysql_data_backups:/backups:z
       - ./compose/dev/mysql/mysql-init-files:/docker-entrypoint-initdb.d
     env_file:
-      # - ./.envs/.dev/.mysql
       - ./.mysql
     restart: always
     ports:
-      - "0.0.0.0:3306:3306"
+      - "3306:3306"
 
   nginx:
     build:
@@ -45,5 +43,5 @@ services:
     volumes:
       - ./compose/dev/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     ports:
-      - "127.0.0.1:80:80"
-
+      - "80:80"
+      - "443:443"

@@ -42,7 +42,7 @@ services:
       MYSQL_ROOT_PASSWORD: test
     restart: always
     ports:
-      - "0.0.0.0:3306:3306"
+      - "3306:3306"
 
   nginx:
     build:
@@ -54,5 +54,5 @@ services:
     volumes:
       - ./compose/dev/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     ports:
-      - "127.0.0.1:80:80"
+      - "80:80"
 

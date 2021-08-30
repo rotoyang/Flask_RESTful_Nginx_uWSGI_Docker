@@ -9,7 +9,7 @@ def create_sqlite_uri(db_name):
 
 
 class BaseConfig:
-    ADMIN_USER = "admin"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class DevelopmentConfig(BaseConfig):
@@ -22,14 +22,12 @@ class DevelopmentConfig(BaseConfig):
     MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
 
     DEBUG = False
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://{}:{}@{}:{}/{}".format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE)
 
 
 class TestingConfig(BaseConfig):
     TESTING = True
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = create_sqlite_uri("test.db")
 
 
