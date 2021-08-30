@@ -25,6 +25,16 @@ Requirement: Docker & Docker-Compose
 5. Stop: docker-compose -f dev.yml down
 
 
+# Running Docker in Server
+1. Same as Local step 1~2.
+2. Edit prod.yml, change nginx args 
+    - CERTBOT_EMAIL=YOUR_EMAIL
+    - DOMAIN_LIST=YOUR_DOMAIN
+4. cd app
+5. Run: docker-compose -f prod.yml up --build -d
+6. Stop: docker-compose -f prod.yml down
+
+
 # Grant User Permission to Docker in Server Side
 1. sudo gpasswd -a ${USER} docker
 2. sudo su
