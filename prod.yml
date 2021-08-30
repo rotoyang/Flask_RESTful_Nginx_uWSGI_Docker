@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 volumes:
   dev_mysql_data: {}
@@ -9,6 +9,7 @@ services:
   flask: &flask
     build:
       context: .
+      network: host
       dockerfile: ./compose/dev/flask/Dockerfile
     image: gogotask_dev_flask
     expose:
@@ -37,7 +38,7 @@ services:
   nginx:
     build:
       context: .
-      network_mode: host
+      network: host
       dockerfile: ./compose/prod/nginx/Dockerfile
       args:
         - CERTBOT_EMAIL=rotoyang@gmail.com
