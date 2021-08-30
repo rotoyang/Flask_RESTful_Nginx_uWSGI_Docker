@@ -1,5 +1,8 @@
 FROM nginx:1.19.5
 
+COPY ./compose/dev/nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
+RUN rm /etc/nginx/conf.d/default.conf
+
 ARG CERTBOT_EMAIL
 ARG DOMAIN_LIST
 
@@ -14,6 +17,3 @@ RUN apt-get update \
 VOLUME /etc/letsencrypt
 
 CMD [ "sh", "-c", "cron && nginx -g 'daemon off;'" ]
-
-COPY ./compose/dev/nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
-RUN rm /etc/nginx/conf.d/default.conf
