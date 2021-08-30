@@ -37,7 +37,7 @@ services:
   nginx:
     build:
       context: .
-      network: host
+      network_mode: host
       dockerfile: ./compose/prod/nginx/Dockerfile
       args:
         - CERTBOT_EMAIL=rotoyang@gmail.com
