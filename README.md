@@ -14,7 +14,7 @@ Requirement: Docker & Docker-Compose
   <pre><code>  .env:  # This is for local develop environment.
     MYSQL_HOST=0.0.0.0
     MYSQL_PORT=3306
-    MYSQL_DATABASESAME_AS_.mysql_IS_REQUIRED
+    MYSQL_DATABASE=SAME_AS_.mysql_IS_REQUIRED
     MYSQL_USER=SAME_AS_.mysql_IS_REQUIRED
     MYSQL_PASSWORD=SAME_AS_.mysql_IS_REQUIRED
     MYSQL_ROOT_PASSWORD=SAME_AS_.mysql_IS_REQUIRED
