@@ -1,7 +1,7 @@
 Requirement: Docker & Docker-Compose
 
 # Running Docker in Local
-1. Clone Repo in directory named app
+1. Clone Repo, renamed directory to app
 2. Add app/.mysql & app/.env files
   <pre><code>  .mysql:
     MYSQL_HOST=mysql
