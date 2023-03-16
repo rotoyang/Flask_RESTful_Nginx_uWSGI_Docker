@@ -1,6 +1,6 @@
 flask==2.1.0
 https://projects.unbit.it/downloads/uwsgi-lts.tar.gz
-Flask-SQLAlchemy==2.5.1
+Flask-SQLAlchemy==3.0.3
 PyMySql==1.0.2
 cryptography==3.4.8
 Flask-Migrate==3.1.0
